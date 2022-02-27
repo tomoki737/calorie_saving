@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/php:8-node-browsers
-      - image: circleci/mysql
+      - image: circleci/mysql:8.0-oracle-ram
         environment:
           POSTGRES_DB: test_db
           POSTGRES_USER: default
