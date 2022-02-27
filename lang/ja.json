@@ -7,5 +7,6 @@
     "Name": "名前",
     "Confirm Password":"パスワードの確認",
     "Already registered?":"登録済ですか？",
-    "Register":"登録"
+    "Register":"登録",
+    "Whoops! Something went wrong.":"サーバーで何らか問題が発生しました。"
   }
