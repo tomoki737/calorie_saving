@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/php:8-node-browsers
-      - image: circleci/mysql:8.0
+      - image: circleci/mysql
         environment:
           POSTGRES_DB: test_db
           POSTGRES_USER: default
@@ -40,7 +40,7 @@ jobs:
             - node_modules
       - run: npm run dev
       - run:
-          name: get ready for postgres
+          name: get ready for mysql
           command: |
             sudo apt-get update
             sudo apt-get install libpq-dev
