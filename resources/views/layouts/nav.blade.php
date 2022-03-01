@@ -19,7 +19,7 @@
                 @auth
                 <li class="nav-item">
                     <div class="d-grid gap-2 d-md-block">
-                        <a class="nav-link  btn btn-primary text-white align-baseline" aria-current="page" href="#" role="button">作成する</a>
+                        <a class="nav-link  btn btn-primary text-white align-baseline" aria-current="page" href="{{route('books.create')}}" role="button">作成する</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown me-2">
