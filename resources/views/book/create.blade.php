@@ -9,7 +9,7 @@
             <input type="text" placeholder="タイトルを入力してください" class="form-control border-bottom bg-light p-0" id="title" style="border:none; border-color: inherit; box-shadow: none;">
         </div>
         <div class="card mt-3 p-0">
-        <h5 class="card-header">1</h5>
+            <h5 class="card-header">1</h5>
             <div class="container-fluid card-body">
                 <div class="row">
                     <div class="col-sm-5">
@@ -21,7 +21,9 @@
                 </div>
             </div>
         </div>
-
+        <div class="text-end mt-3">
+                <button class="btn btn-primary col-3 pt-3 pe-2 ps-2  pb-3 fs-5" type="button">作成する</button>
+        </div>
     </div>
 </div>
 @endsection
