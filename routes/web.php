@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BooksController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionController;
 /*
@@ -24,3 +25,5 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('questions', QuestionController::class);
+
+Route::get('books', [BooksController::class, 'index'])->name('books.index');
