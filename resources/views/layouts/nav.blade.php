@@ -17,11 +17,6 @@
                 </li>
                 @endguest
                 @auth
-                <li class="nav-item">
-                    <div class="d-grid gap-2 d-md-block">
-                        <a class="nav-link  btn btn-primary text-white align-baseline" aria-current="page" href="{{route('questions.create')}}" role="button">作成する</a>
-                    </div>
-                </li>
                 <li class="nav-item dropdown me-2">
                     <div class="btn-group">
                         <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
