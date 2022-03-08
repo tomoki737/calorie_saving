@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-
+use Scriptotek\GoogleBooks\GoogleBooks;
 class BooksController extends Controller
 {
     public function index(Request $request) {
@@ -13,6 +13,9 @@ class BooksController extends Controller
 
         if(!empty($request->keyword))
         {
+            books = new GoogleBooks(["maxResults" => 30]);
+            $searchedBooks = collect($books->volumes->search($request->keyword));
+            // $pictureBooks = 
             $title = urlencode($request->keyword);
             $url = 'https://www.googleapis.com/books/v1/volumes?q=' . $title . '&country=JP&tbm=bks';
             $client = new Client();
@@ -24,7 +27,7 @@ class BooksController extends Controller
                 'items' => $items,
                 'keyword' => $request->keyword,
             ];
-            return view('books/index', $data);
+            return view('books/search', $data);
         }
     }
 }

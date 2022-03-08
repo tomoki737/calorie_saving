@@ -27,7 +27,9 @@
             <p>概要:{{ $item['volumeInfo']['description']}}</p>
             @endif
             <form action="{{ route('questions.create', ['book' => $item['volumeInfo']['title']]) }}" method="get">
-                <button type="submit" class="btn btn-primary text-white">作成する</button>
+                <button type="hidden" name="google_books_id" value=""></button>
+                <button type="submit
+                " class="btn btn-primary text-white">作成する</button>
             </form>
             <hr>
             @endforeach
