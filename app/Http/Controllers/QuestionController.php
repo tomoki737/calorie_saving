@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\QuestionRequest;
 use App\Models\Question;
 use GuzzleHttp\Client;
 
 class QuestionController extends Controller
 {
-    public function create($book)
+    public function create($book, Request $request)
     {
         return view('question.create', ['book' => $book]);
     }

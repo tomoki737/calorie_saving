@@ -13,9 +13,6 @@ class BooksController extends Controller
 
         if(!empty($request->keyword))
         {
-            books = new GoogleBooks(["maxResults" => 30]);
-            $searchedBooks = collect($books->volumes->search($request->keyword));
-            // $pictureBooks = 
             $title = urlencode($request->keyword);
             $url = 'https://www.googleapis.com/books/v1/volumes?q=' . $title . '&country=JP&tbm=bks';
             $client = new Client();
