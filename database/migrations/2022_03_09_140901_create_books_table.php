@@ -15,22 +15,22 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('question_id');
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->unsignedBigInteger('question_id')->unsigned();
             $table->string('google_books_id', 100);
-            $table->string('isbn_13', 100)->nullable();
             $table->string('title', 255);
-            $table->string('authors', 255)->nullable();
-            $table->string('thumnail_url', 1000)->nullable();
+            $table->string('published_date', 100);
+            $table->string('thumbnail_url', 1000)->nullable();
             $table->timestamps();
-            
+
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
+
             $table->foreign('question_id')
-                ->references('question_id')
+                ->references('id')
                 ->on('questions');
-        });
+            });
     }
 
     /**

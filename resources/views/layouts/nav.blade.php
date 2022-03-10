@@ -37,7 +37,7 @@
                     </div>
                 </li>
                 @endauth
-                <form class="d-flex align-items-center" action="{{ route('books.index') }}" method="get">
+                <form class="d-flex align-items-center" action="{{ route('books.search') }}" method="get">
                     @csrf
                     <div class="input-group">
                         <input type="search" class="form-control" placeholder="本を検索" aria-label="Search" aria-describedby="button-addon2" name="keyword" value="{{$content ?? old('content')}}">

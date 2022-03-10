@@ -5,7 +5,7 @@
 <div class="container" style="max-width: 1000px;">
     <div class="row">
         <h1 class="mt-2">本を検索</h3>
-            <form action="{{ route('books.index') }}" method="get">
+            <form action="{{ route('books.search') }}" method="get">
                 <div class="col-sm-5">
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="書籍名" name="keyword" value="{{ $keyword }}">
                 </div>
@@ -26,8 +26,11 @@
             @if (array_key_exists('description', $item['volumeInfo']))
             <p>概要:{{ $item['volumeInfo']['description']}}</p>
             @endif
-            <form action="{{ route('questions.create', ['book' => $item['volumeInfo']['title']]) }}" method="get">
+            <form action="{{ route('questions.create') }}" method="get">
                 <input type="hidden" name="google_books_id" value="{{ $item['id'] }}"></input>
+                <input type="hidden" name="title" value="{{ $item['volumeInfo']['title'] }}"></input>
+                <input type="hidden" name="published_date" value="{{ $item['volumeInfo']['publishedDate'] }}"></input>
+                <input type="hidden" name="thumbnail_url" value="{{ $item['volumeInfo']['imageLinks']['thumbnail'] }}"></input>
                 <button type="submit
                 " class="btn btn-primary text-white">作成する</button>
             </form>

@@ -24,6 +24,10 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="google_books_id" value="{{ $book->google_books_id }}"></input>
+                <input type="hidden" name="title" value="{{ $book->title }}"></input>
+                <input type="hidden" name="published_date" value="{{ $book->published_date }}"></input>
+                <input type="hidden" name="thumbnail_url" value="{{ $book->thumbnail_url }}"></input>
             <div class="text-end mt-3">
                 <button class="btn btn-primary col-3 pt-3 pe-2 ps-2  pb-3 fs-5" type="submit">作成する</button>
             </div>

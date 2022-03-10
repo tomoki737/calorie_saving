@@ -21,7 +21,7 @@ Route::get('/', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('questions', QuestionController::class, ['except' => ['create', 'show', 'store']]);
-Route::get('questions/{book}', [QuestionController::class, 'create'])->name('questions.create');
-Route::post('questions/{book}', [QuestionController::class, 'store'])->name('questions.store');
+Route::get('questions', [QuestionController::class, 'create'])->name('questions.create');
+Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
 
-Route::get('books', [BooksController::class, 'index'])->name('books.index');
+Route::get('books', [BooksController::class, 'search'])->name('books.search');

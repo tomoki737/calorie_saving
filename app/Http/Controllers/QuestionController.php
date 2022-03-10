@@ -5,28 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\QuestionRequest;
 use App\Models\Question;
+use App\Models\Book;
 use GuzzleHttp\Client;
 
 class QuestionController extends Controller
 {
-    public function create($book, Request $request)
-    {
-        return view('question.create', ['book' => $book]);
+    public function create(Request $request, Book $book){
+        $book->fill($request->all());
+        return view("question/create", ['book' => $book]);
     }
 
-    public function store(QuestionRequest $request, Question $question, $book)
+    public function store(QuestionRequest $request, Question $question, Book $book)
     {
-        $items = null;
-        $url = 'https://www.googleapis.com/books/v1/volumes?q=' . $book . '&country=JP&tbm=bks&maxResults=1';
-        $client = new Client();
-        $response = $client->request("GET", $url);
-        $body = $response->getbody();
-        $bodyArray = json_decode($body, true);
-        $item = $bodyArray['items'];
-        dd($item);
         $question->fill($request->all());
+        $book->fill($request->all());
         $question->user_id = $request->user()->id;
         $question->save();
+        $book->user_id = $request->user()->id;
+        $book->question_id = $question->id;
+        $book->save();
         return view('home');
     }
 

@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Book extends Model
 {
-    protected $fillable = [
-        'question',
-        'answer',
-    ];
     use HasFactory;
+    protected $fillable = [
+        'google_books_id',
+        'title',
+        'published_date',
+        'thumbnail_url',
+    ];
 }
