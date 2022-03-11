@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionController;
 /*
@@ -14,14 +15,10 @@ use App\Http\Controllers\QuestionController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 require __DIR__.'/auth.php';
 
-Route::resource('questions', QuestionController::class, ['except' => ['create', 'show', 'store']]);
-Route::get('questions', [QuestionController::class, 'create'])->name('questions.create');
-Route::post('questions', [QuestionController::class, 'store'])->name('questions.store');
+Route::resource('questions', QuestionController::class, ['except' => ['show']]);
 
 Route::get('books', [BooksController::class, 'search'])->name('books.search');

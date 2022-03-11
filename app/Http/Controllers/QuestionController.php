@@ -17,16 +17,20 @@ class QuestionController extends Controller
 
     public function store(QuestionRequest $request, Question $question, Book $book)
     {
+        $book->user_id = $request->user()->id;
+        $book->fill($request->all());
+        $book->save();
         $question->fill($request->all());
         $book->fill($request->all());
         $question->user_id = $request->user()->id;
+        $question->book_id = $book->id;
         $question->save();
-        $book->user_id = $request->user()->id;
-        $book->question_id = $question->id;
-        $book->save();
-        return view('home');
+        return redirect('/');
     }
 
+    public function edit(Question $question) {
+        return view('question/edit', ['question' => $question]);
+    }
     public function show()
     {
         dd('ai');

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light border-bottom py-3 bg-white mb-3">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">BOOQ</a>
+        <a class="navbar-brand" href="{{route('home')}}">BOOQ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

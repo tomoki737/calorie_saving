@@ -18,7 +18,9 @@ return new class extends Migration
             $table->text('question');
             $table->text('answer');
             $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('book_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('book_id')->references('id')->on('books');
             $table->timestamps();
         });
     }

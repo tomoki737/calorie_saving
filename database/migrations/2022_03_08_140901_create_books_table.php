@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unsigned();
-            $table->unsignedBigInteger('question_id')->unsigned();
             $table->string('google_books_id', 100);
             $table->string('title', 255);
             $table->string('published_date', 100);
@@ -26,10 +25,6 @@ return new class extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
-
-            $table->foreign('question_id')
-                ->references('id')
-                ->on('questions');
             });
     }
 
