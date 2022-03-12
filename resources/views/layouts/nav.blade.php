@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light border-bottom py-3 bg-white mb-3">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">BOOQ</a>
+        <a class="navbar-brand" href="{{route('home')}}">BOOQ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,13 +37,6 @@
                     </div>
                 </li>
                 @endauth
-                <form class="d-flex align-items-center" action="{{ route('books.index') }}" method="get">
-                    @csrf
-                    <div class="input-group">
-                        <input type="search" class="form-control" placeholder="本を検索" aria-label="Search" aria-describedby="button-addon2" name="keyword" value="{{$content ?? old('content')}}">
-                        <button class="btn btn-outline-secondary" type="hidden" id="button-addon2"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
             </ul>
         </div>
     </div>
