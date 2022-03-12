@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Question extends Model
+class Record extends Model
 {
     protected $fillable = [
-        'question',
-        'answer',
+        'food',
+        'calorie',
     ];
     use HasFactory;
 
-    public function book(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Book');
-    }
+    // public function book(): BelongsTo
+    // {
+    //     return $this->belongsTo('App\Models\Book');
+    // }
 }

@@ -17,7 +17,12 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->text('food');
             $table->integer('calorie');
+            $table->bigInteger('saving_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('saving_id')
+                ->references('id')
+                ->on('savings');
         });
     }
 

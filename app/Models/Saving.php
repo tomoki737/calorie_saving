@@ -9,5 +9,7 @@ class Saving extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'goal_title',
+        'goal_calorie',
     ];
 }

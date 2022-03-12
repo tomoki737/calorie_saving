@@ -16,18 +16,13 @@ return new class extends Migration
         Schema::create('savings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('food_record_id')->unsigned()->nullable();
-            $table->string('title', 255);
-            $table->string('goal', 100);
+            $table->string('goal_calorie', 100);
+            $table->string('goal_title', 255);
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
-
-            $table->foreign('food_record_id')
-                ->references('id')
-                ->on('food_records');
             });
     }
 

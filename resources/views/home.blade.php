@@ -5,6 +5,9 @@
 <div class="container" style="max-width: 1000px;">
     <div class="row">
         <h3>あなたの目標</h3>
+        @if($saving)
+        <h3> {{ $saving->goal_title }} </h3>
+        @endif
     </div>
 </div>
 @endsection
