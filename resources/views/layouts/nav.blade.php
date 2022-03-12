@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light border-bottom py-3 bg-white mb-3">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('home')}}">BOOQ</a>
+        <a class="navbar-brand" href="{{route('home')}}">カロリー貯金</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,6 +17,9 @@
                 </li>
                 @endguest
                 @auth
+                <li class="nav-item">
+                    <a href="{{ route('savings.create') }}" class="btn btn-primary">作成</a>
+                </li>
                 <li class="nav-item dropdown me-2">
                     <div class="btn-group">
                         <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
