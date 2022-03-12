@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('food_records', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('question');
-            $table->text('answer');
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('book_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->text('food');
+            $table->integer('calorie');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('food_records');
     }
 };

@@ -19,6 +19,5 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 require __DIR__.'/auth.php';
 
-Route::resource('questions', QuestionController::class, ['except' => ['show']]);
+Route::resource('savings', SavingController::class, ['except' => ['show']])->middleware('auth');
 
-Route::get('books', [BooksController::class, 'search'])->name('books.search');

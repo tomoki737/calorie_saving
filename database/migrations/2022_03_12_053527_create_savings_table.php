@@ -13,18 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('savings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->unsigned();
-            $table->string('google_books_id', 100);
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('food_record_id')->unsigned()->nullable();
             $table->string('title', 255);
-            $table->string('published_date', 100);
-            $table->string('thumbnail_url', 1000)->nullable();
+            $table->string('goal', 100);
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
+
+            $table->foreign('food_record_id')
+                ->references('id')
+                ->on('food_records');
             });
     }
 
@@ -35,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('savings');
     }
 };

@@ -10,8 +10,6 @@ class HomeController extends Controller
 {
     public function home(Request $request)
     {
-        $user = $request->user()->id ?? null;
-        $my_question = Question::where('user_id', $user)->first();
-        return view('home', ['my_question' => $my_question]);
+        return view('home');
     }
 }

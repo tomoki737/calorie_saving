@@ -37,13 +37,6 @@
                     </div>
                 </li>
                 @endauth
-                <form class="d-flex align-items-center" action="{{ route('books.search') }}" method="get">
-                    @csrf
-                    <div class="input-group">
-                        <input type="search" class="form-control" placeholder="本を検索" aria-label="Search" aria-describedby="button-addon2" name="keyword" value="{{$content ?? old('content')}}">
-                        <button class="btn btn-outline-secondary" type="hidden" id="button-addon2"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
             </ul>
         </div>
     </div>
