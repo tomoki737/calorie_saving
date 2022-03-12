@@ -7,15 +7,17 @@ use App\Models\Saving;
 
 class SavingController extends Controller
 {
-    public function create(Request $request, Saving $saving){
-
+    public function create()
+    {
+        return view('saving.create');
     }
 
-    public function store(Request $request, Saving $saving){
-
+    public function store(Request $request, Saving $saving)
+    {
     }
 
-    public function edit() {
+    public function edit()
+    {
     }
     public function show()
     {
